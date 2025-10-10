@@ -9,14 +9,11 @@ export const Home = () => {
                     Hi, I'm Jack Kong
                 </h1>
 
-                <p className="text-gray-400 text-lg mb-8 max-w-lg mx-auto">
-                    I’m a software developer with most experience in smart computing, with expertise in integrated hardware, software, and network technologies. 
-                    I have a strong background in building innovative smart systems for real-world applications
+                <p className="text-gray-400 text-xl mb-8 max-w-lg mx-auto">
+                    Software Developer
                 </p>
                 <p className="text-gray-400 text-lg mb-8 max-w-lg mx-auto">
-                    Dreaming up cool ideas and making them come true is where my passion lies. 
-                    I am enthusiastic about building tools that help myself and others to be more productive and enjoy the process of crafting. 
-                    You can find my full projects list here.
+                    Passionate about creating smart, useful solutions that make a difference.
                 </p>
 
                 <div className="flex justify-center space-x-4">

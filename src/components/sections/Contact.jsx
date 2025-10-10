@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 import emailjs from "emailjs-com";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -32,8 +33,7 @@ export const Contact = () => {
             Contact Me
           </h2>
           <p className="text-gray-300 text-center mb-6">
-            I’m always open to collaborating on new projects, exploring creative ideas, or discussing opportunities to bring your vision to life.
-            Feel free to reach out anytime using the form below.
+            Fill out the form below or reach me through the provided contact methods.
           </p>
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="relative">
@@ -95,6 +95,36 @@ export const Contact = () => {
               Send Message
             </button>
           </form>
+          <div className="mt-10 flex flex-col items-center text-center">
+  <p className="mb-4 text-gray-300 font-medium">
+    Alternatively, you can reach me at:
+  </p>
+
+  <div className="flex flex-col sm:flex-row gap-6">
+    <a
+      href="tel:+447853761808"
+      className="flex items-center gap-2 px-4 py-2 border border-blue-500/50 rounded-lg hover:bg-blue-500/10 hover:text-white transition-colors duration-300"
+    >
+      📞 +44 7853 761 808
+    </a>
+
+    <a
+      href="https://linkedin.com/in/jack-kong-02b73b240"
+      target="_blank"
+      className="flex items-center gap-2 px-4 py-2 border border-blue-500/50 rounded-lg hover:bg-blue-500/10 hover:text-white transition-colors duration-300"
+    >
+      <FaLinkedin size={24} /> LinkedIn
+    </a>
+
+    <a
+      href="https://github.com/jack-kong03"
+      target="_blank"
+      className="flex items-center gap-2 px-4 py-2 border border-blue-500/50 rounded-lg hover:bg-blue-500/10 hover:text-white transition-colors duration-300"
+    >
+      <FaGithub size={24} /> GitHub
+    </a>
+  </div>
+</div>
         </div>
       </RevealOnScroll>
     </section>

@@ -5,47 +5,41 @@ import { RevealOnScroll } from "../RevealOnScroll";
 
 export const About = () => {
 
-    const ProgrammingAndSoftwareDevelopment = [
+    const ProgrammingLanguages = [
         "Python",
         "Java", 
         "C#",
-    ];
-
-    const AiAndDataScience = [
-        "Python",
-        "Pandas", 
-        "NumPy",
-        "Matplotlib",
-        "Scikit-Learn",
-        "TensorFlow",
-    ];
-
-    const WebDevelopment = [
-        "Python", 
-        "Django",
-        "JavaScript", 
-        "React",
+        "JavaScript",
         "HTML5", 
         "CSS3",
-        "TailwindCSS",
         "SQL",
+        "Bash"
     ];
 
-    const cloudAndDevOps = [
-        "Microsoft Azure", 
-        "Docker", 
-        "Git", 
-        "GitHub", 
-        "CI/CD", 
-        "mySQL"
+    const FrameworksAndTools = [
+        "Django",
+        "React", 
+        "Docker",
+        "Git",
+        "Tableau",
+        "CI/CD",
+        "NodeRED",
+        "Raspberry Pi",
+        "Adruino"
     ];
 
-    const toolsAndOthers = [
-        "Tableau", 
-        "Raspberry-Pi", 
-        "MQTT", 
-        "Node-RED", 
-        "ubuntu"
+    const CloudPlatforms = [
+        "Microsoft Azure",
+        "MySQL",
+    ];
+
+    const AIandDataScience = [
+        "TensorFlow",
+        "Pandas",
+        "NumPy",
+        "Scikit-Learn",
+        "Matplotlib",
+        "PyTorch"
     ];
 
     return <section id="about" className="min-h-screen flex items-center justify-center py-20">
@@ -63,16 +57,16 @@ export const About = () => {
                         />
                     </div>
                     <p className="text-gray-300 text-center justify-center mb-6">
-                        A Passionate Developer with expertise in AI/ML, cloud computing, IoT, and full-stack development. 
-                        I channel my experiences into developing innovative solutions that simplify processes, 
-                        enhance user experiences, and deliver tangible impact.
+                        First Class Computing graduate with hands-on software engineering and cloud experience gained through academic and personal projects. 
+                        Skilled in Python, Azure services, and AI/ML tools, with a proven ability to build scalable, data-driven applications. 
+                        Seeking a Junior Software Engineer or Cloud Developer role to leverage technical skills and collaborative problem-solving in innovative tech teams.
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
                             <h3 className="text-xl font-bold mb-4">Programming And Software Development</h3>
                             <div className="flex flex-wrap gap-2">
-                                {ProgrammingAndSoftwareDevelopment.map((tech, key) => (
+                                {ProgrammingLanguages.map((tech, key) => (
                                     <span 
                                         key={key}
                                         className="bg-blue-500/10 text-blue-500 px-3 py-1 rounded-full text-sm hover:bg-blue-500/20
@@ -85,7 +79,7 @@ export const About = () => {
                         <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
                             <h3 className="text-xl font-bold mb-4">Ai & Data Science</h3>
                             <div className="flex flex-wrap gap-2">
-                                {AiAndDataScience.map((tech, key) => (
+                                {AIandDataScience.map((tech, key) => (
                                     <span
                                         key={key}
                                         className="bg-blue-500/10 text-blue-500 px-3 py-1 rounded-full text-sm hover:bg-blue-500/20
@@ -96,9 +90,9 @@ export const About = () => {
                             </div>
                         </div>
                         <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                            <h3 className="text-xl font-bold mb-4">Web Development</h3>
+                            <h3 className="text-xl font-bold mb-4">Frameworks & Tools</h3>
                             <div className="flex flex-wrap gap-2">
-                                {WebDevelopment.map((tech, key) => (
+                                {FrameworksAndTools.map((tech, key) => (
                                     <span
                                         key={key}
                                         className="bg-blue-500/10 text-blue-500 px-3 py-1 rounded-full text-sm hover:bg-blue-500/20
@@ -109,22 +103,9 @@ export const About = () => {
                             </div>
                         </div>
                         <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                            <h3 className="text-xl font-bold mb-4">Cloud & DevOps</h3>
+                            <h3 className="text-xl font-bold mb-4">Cloud Platforms</h3>
                             <div className="flex flex-wrap gap-2">
-                                {cloudAndDevOps.map((tech, key) => (
-                                    <span
-                                        key={key}
-                                        className="bg-blue-500/10 text-blue-500 px-3 py-1 rounded-full text-sm hover:bg-blue-500/20
-                                                   hover:shadow-[0.2px_8px_rgba(59,130,2246,0.2)] transition">
-                                        {tech}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-                        <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                            <h3 className="text-xl font-bold mb-4">Tools & Others</h3>
-                            <div className="flex flex-wrap gap-2">
-                                {toolsAndOthers.map((tech, key) => (
+                                {CloudPlatforms.map((tech, key) => (
                                     <span
                                         key={key}
                                         className="bg-blue-500/10 text-blue-500 px-3 py-1 rounded-full text-sm hover:bg-blue-500/20
@@ -163,6 +144,15 @@ export const About = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="flex justify-center space-x-4 mt-8">
+                <a 
+                href="/assets/JACK_KONG_CV.pdf" 
+                download
+                className="px-6 py-3 bg-blue-500 text-white rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
+                    >
+                     Download my CV
+                </a>
             </div>
         </div>
         </RevealOnScroll>
