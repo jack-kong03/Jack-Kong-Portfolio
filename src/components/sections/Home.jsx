@@ -21,13 +21,13 @@ export const Home = () => {
 
                 <div className="flex justify-center space-x-4">
                     <a
-                        href="#Projects"
+                        href="#projects"
                         className="px-6 py-3 bg-blue-500 text-white rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
                     >
                         View Projects
                     </a>
                     <a
-                        href="#Contact"
+                        href="#contact"
                         className="border border-blue-500/50 text-blue-500 px-6 py-3 rounded font-medium transition-all duration-200 
                         hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.2)] hover:bg-blue-500/10"
                     >
