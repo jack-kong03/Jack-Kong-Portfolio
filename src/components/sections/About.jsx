@@ -70,7 +70,7 @@ export const About = () => {
                                     <span 
                                         key={key}
                                         className="bg-blue-500/10 text-blue-500 px-3 py-1 rounded-full text-sm hover:bg-blue-500/20
-                                                   hover:shadow-[0.2px_8px_rgba(59,130,2246,0.2)] transition">
+                                                   hover:shadow-[0.2px_8px_rgba(59,130,246,0.2)] transition">
                                         {tech}                  
                                     </span>
                                 ))}
@@ -83,7 +83,7 @@ export const About = () => {
                                     <span
                                         key={key}
                                         className="bg-blue-500/10 text-blue-500 px-3 py-1 rounded-full text-sm hover:bg-blue-500/20
-                                                   hover:shadow-[0.2px_8px_rgba(59,130,2246,0.2)] transition">
+                                                   hover:shadow-[0.2px_8px_rgba(59,130,246,0.2)] transition">
                                         {tech}
                                     </span>
                                 ))}
@@ -96,7 +96,7 @@ export const About = () => {
                                     <span
                                         key={key}
                                         className="bg-blue-500/10 text-blue-500 px-3 py-1 rounded-full text-sm hover:bg-blue-500/20
-                                                   hover:shadow-[0.2px_8px_rgba(59,130,2246,0.2)] transition">
+                                                   hover:shadow-[0.2px_8px_rgba(59,130,246,0.2)] transition">
                                         {tech}
                                     </span>
                                 ))}
@@ -109,7 +109,7 @@ export const About = () => {
                                     <span
                                         key={key}
                                         className="bg-blue-500/10 text-blue-500 px-3 py-1 rounded-full text-sm hover:bg-blue-500/20
-                                                   hover:shadow-[0.2px_8px_rgba(59,130,2246,0.2)] transition">
+                                                   hover:shadow-[0.2px_8px_rgba(59,130,246,0.2)] transition">
                                         {tech}
                                     </span>
                                 ))}
@@ -146,14 +146,14 @@ export const About = () => {
                 </div>
             </div>
             <div className="flex justify-center space-x-4 mt-8">
-                <a 
-                href="/assets/JACK_KONG_CV.pdf" 
-                download
-                className="px-6 py-3 bg-blue-500 text-white rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
-                    >
-                     Download my CV
-                </a>
-            </div>
+  <a
+    href="/assets/JACK_KONG_CV.pdf"
+    download="JACK_KONG_CV.pdf"
+    className="px-6 py-3 bg-blue-500 text-white rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
+  >
+    Download my CV
+  </a>
+</div>
         </div>
         </RevealOnScroll>
     </section>
