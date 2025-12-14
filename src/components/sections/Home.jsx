@@ -10,12 +10,19 @@ export const Home = () => {
                 </h1>
 
                 <p className="text-gray-400 text-xl mb-8 max-w-lg mx-auto">
-                    Software Developer
+                    Junior Developer
                 </p>
                 <p className="text-gray-400 text-lg mb-8 max-w-lg mx-auto">
-                    Passionate about creating smart, useful solutions that make a difference.
+                    Python | Cloud | IoT 
                 </p>
-
+                <p className="text-gray-400 text-lg mb-8 max-w-lg mx-auto">
+                    Built cloud-connected IoT sensor systems for real-time monitoring of water quality in rivers @ AquaSensor Ltd
+                </p>
+                <p className="text-gray-400 text-lg mb-8 max-w-lg mx-auto">
+                    1st Class Computing (Smart Technologies) Graduate 
+                    @ Sheffield Hallam University
+                </p>
+                
                 <div className="flex justify-center space-x-4">
                     <a
                         href="#projects"
