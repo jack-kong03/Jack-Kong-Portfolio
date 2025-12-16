@@ -1,6 +1,7 @@
 import React from "react";
 import profilePic from "../../assets/profile.jpg";
 import AquaSensor from "../../assets/AquaSensor.jpg";
+import AquaSensorLogo from "../../assets/AquaSensorLogo.jpeg";
 import { RevealOnScroll } from "../RevealOnScroll";
 
 export const About = () => {
@@ -55,7 +56,7 @@ export const About = () => {
               <img
                 src={profilePic}
                 alt="Jack Kong"
-                className="w-40 h-40 rounded-full object-cover shadow-lg mb-4"
+                className="w-52 h-52 md:w-64 md:h-64 rounded-2xl object-cover shadow-lg mb-4"
               />
             </div>
 
@@ -178,7 +179,7 @@ export const About = () => {
             <div className="rounded-xl p-6 border border-white/10 bg-slate-900/40 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] transition-all">
               <h3 className="text-xl font-bold mb-4">💼 Work Experience</h3>
               <div className="space-y-4 text-gray-300">
-                <div>
+                <div className="flex flex-col items-center">
                   <h4 className="font-semibold text-2xl text-center">
                     Student Project Intern
                   </h4>
@@ -193,12 +194,24 @@ export const About = () => {
                       AquaSensor
                     </a>
                   </h4>
-                  <h4 className="text-center">Nov 2023 – Jun 2024</h4>
-                  <p className="text-center mt-2">
-                    Built cloud-connected IoT sensor systems for real-time
-                    monitoring of river water quality in a small agile team.
-                  </p>
+                  <div className="mt-3 inline-flex items-center justify-center rounded-xl bg-white/5 border border-white/10 px-3 py-2">
+  <img
+    src={AquaSensorLogo}
+    alt="AquaSensor logo"
+    className="h-8 object-contain"
+  />
+</div>
+
+
+                  <h4 className="text-center mt-2">Nov 2023 – Jun 2024</h4>
+                  <ul className="mt-3 space-y-1 text-center text-sm text-gray-300">
+  <li>Worked in a small agile team to prototype and deploy in‑river sensor units streaming secure, high‑frequency water quality data to the cloud.</li>
+  <li>Contributed to the web dashboard and data visualisations used by partners to spot pollution incidents and track long‑term river health.</li>
+  <li>Helped test and validate sensor data, investigating anomalies and supporting real‑world deployments with UK rivers and water-sector partners.</li>
+</ul>
+
                 </div>
+
                 <div className="flex flex-col items-center">
                   <img
                     src={AquaSensor}

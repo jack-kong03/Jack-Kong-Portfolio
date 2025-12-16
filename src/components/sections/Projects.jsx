@@ -76,11 +76,11 @@ const projectsData = [
     demo: "https://jack-kong03.github.io",
   },
   {
-    title: "Sales Data Mart & ETL Pipeline",
+    title: "GIA - Personal bot for Discord",
     description:
-      "Sales data mart with an automated ETL pipeline aggregating data from multiple sources. Used Apache Airflow for workflow orchestration and built data quality checks to ensure reliable downstream analytics. Enabled fast, consistent sales reporting for stakeholders, improving data accuracy by around 95% and reducing reporting time by roughly 50%.",
-    tech: ["Python", "SQL", "Tableau", "Pandas", "Matplotlib"],
-    github: "https://github.com/jack-kong03",
+      "GIA is an interactive personal bot for discord designed to assist users with daily tasks and provide information on various topics. Built using Python and the Discord.py library, GIA can respond to user commands, fetch data from external APIs, and perform automated actions within a Discord server. Features include weather updates, reminders, and fun interactive games.",
+    tech: ["Python", "Discord.py", "APIs", "Bot Development"],
+    github: "https://github.com/jack-kong03/GIA.git",
     demo: "https://jack-kong03.github.io",
   },
   {
