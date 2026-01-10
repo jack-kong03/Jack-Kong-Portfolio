@@ -1,121 +1,168 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 import { motion } from "framer-motion";
 
-const ProjectCard = ({ title, description, tech, github, demo }) => (
-  <motion.div
-    whileHover={{ y: -5, boxShadow: "0 10px 15px rgba(59,130,246,0.30)" }}
-    className="p-6 rounded-xl border border-white/10 bg-slate-900/40 transition-transform duration-300"
-  >
-    <h3 className="text-xl font-bold mb-2 text-white">{title}</h3>
-    <p className="text-gray-400 mb-4 text-sm leading-relaxed">{description}</p>
+const ProjectCard = ({
+  title,
+  tagline,
+  description,
+  techPrimary,
+  techExtraCount,
+  github,
+  status,
+}) => {
+  const getStatusColor = (status) => {
+    switch (status?.toLowerCase()) {
+      case "complete":
+        return "text-green-600";
+      case "in progress":
+        return "text-blue-600";
+      case "prototype":
+        return "text-orange-600";
+      default:
+        return "text-gray-600";
+    }
+  };
 
-    <div className="flex gap-3 mb-4">
-      <a
-        href={demo}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="bg-blue-500 text-white py-2 px-4 rounded font-medium text-sm hover:bg-blue-600 transition-colors"
-      >
-        Live Demo
-      </a>
-      <a
-        href={github}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="bg-slate-800 text-white py-2 px-4 rounded font-medium text-sm hover:bg-slate-900 transition-colors"
-      >
-        GitHub
-      </a>
-    </div>
+  return (
+    <motion.article
+      whileHover={{ y: -8 }}
+      className="group rounded-3xl bg-gray-50 border border-gray-200 p-8 flex flex-col justify-between hover:shadow-lg transition-all duration-300"
+    >
+      <header className="mb-5 space-y-2">
+        <p className="text-xs uppercase tracking-wider text-gray-500 font-medium">
+          {tagline}
+        </p>
+        <h3 className="text-2xl font-semibold text-gray-900">
+          {title}
+        </h3>
+        {status && (
+          <p className={`text-sm font-medium ${getStatusColor(status)}`}>
+            {status}
+          </p>
+        )}
+      </header>
 
-    <div className="flex flex-wrap gap-2">
-      {tech.map((techItem, key) => (
-        <span
-          key={key}
-          className="bg-blue-500/10 text-blue-400 py-1 px-3 rounded-full text-xs hover:bg-blue-500/20 hover:shadow-[0_0_10px_rgba(59,130,246,0.2)] transition-all"
-        >
-          {techItem}
-        </span>
-      ))}
-    </div>
-  </motion.div>
-);
+      <p className="text-base leading-relaxed text-gray-600 mb-6">
+        {description}
+      </p>
+
+      <footer className="flex items-center justify-between gap-4 pt-6 border-t border-gray-200">
+        <div className="flex flex-wrap items-center gap-2 text-sm text-gray-600">
+          {techPrimary.map((t) => (
+            <span key={t} className="font-medium">{t}</span>
+          ))}
+          {techExtraCount > 0 && (
+            <span className="text-gray-400">+ {techExtraCount} more</span>
+          )}
+        </div>
+
+        {github && (
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-900 hover:text-gray-600 font-medium transition-colors text-sm"
+          >
+            GitHub →
+          </a>
+        )}
+      </footer>
+    </motion.article>
+  );
+};
 
 const projectsData = [
   {
-    title: "AI Finance Pipeline",
+    title: "SnapSpend",
+    tagline: "Automated Personal Finance Tracker Application",
     description:
-      "End-to-end AI-powered personal finance automation pipeline that ingests receipts via email or Google Drive. Uses OCR to extract data and OpenAI APIs to clean and structure it into JSON, stored and processed through Azure. Generates automated spending summaries and visualisations with Matplotlib and emails them back to the user. Reduced manual data entry by around 90% using an automated OCR + Azure pipeline.",
-    tech: ["Python", "Azure", "OpenAI", "OCR", "Matplotlib"],
-    github: "https://github.com/jack-kong03",
-    demo: "https://jack-kong03.github.io",
+      "A full-stack solution that captures receipts, applies OCR with AI-powered cleanup, and pushes structured spend data into Azure for automated summaries and visual dashboards.",
+    techPrimary: ["Python", "Azure", "OpenAI"],
+    techExtraCount: 2, // OCR, Matplotlib
+    github: "https://github.com/jack-kong03/SnapSpend",
+    status: "Complete",
   },
   {
-    title: "Cloud-Native Student Registration System",
+    title: "CourseConnect",
+    tagline: "Course Registration Web App",
     description:
-      "Cloud-native student registration system supporting real-time course enrolment, student profiles, and automated notifications. Built using a monolithic architecture with REST APIs and CI/CD pipelines for streamlined deployment on Azure. Improved processing speed by around 40% and enhanced reliability through automated CI/CD and testing.",
-    tech: ["Python", "Node.js", "HTML", "CSS", "Django", "Azure", "MySQL", "REST API"],
-    github: "https://github.com/jack-kong03",
-    demo: "https://jack-kong03.github.io",
+    "A cloud-native student registration platform with REST APIs and CI/CD on Azure, enabling real-time enrollment, automated notifications, and comprehensive student profile management.",
+  techPrimary: ["Python", "Django", "Azure"],
+  techExtraCount: 4, // Node.js, HTML, CSS, MySQL
+  github: "https://github.com/jack-kong03",
+  status: "Complete",
   },
   {
-    title: "Population Prediction & Sentiment Analysis",
+    title: "Population Insights",
+    tagline: "ML · Sentiment",
     description:
-      "Machine learning system built on a population dataset from Kaggle with over 1,000 data points. Used Pandas for data cleaning and applied models including linear regression and a custom genetic algorithm to predict future population growth. Implemented a sentiment model to classify regions as positive (growth) or negative (decline) and visualised results with Matplotlib and Tableau. Achieved around 95% accuracy on the sentiment classification task.",
-    tech: [
-      "Python",
-      "Pandas",
-      "Machine Learning",
-      "Linear Regression",
-      "Genetic Algorithm",
-      "Sentiment Analysis",
-      "Matplotlib",
-      "Tableau",
-    ],
+      "Population forecasting and sentiment lab using regression and a custom genetic algorithm, with regional growth sentiment classification and visual outputs.",
+    techPrimary: ["Python", "Pandas", "ML"],
+    techExtraCount: 4, // GA, Sentiment, Matplotlib, Tableau
     github: "https://github.com/jack-kong03",
-    demo: "https://jack-kong03.github.io",
+    status: "Complete",
   },
   {
-    title: "GIA - Personal bot for Discord",
+    title: "GAIA · Discord Bot",
+    tagline: "Automated Personal Assistant",
     description:
-      "GIA is an interactive personal bot for discord designed to assist users with daily tasks and provide information on various topics. Built using Python and the Discord.py library, GIA can respond to user commands, fetch data from external APIs, and perform automated actions within a Discord server. Features include weather updates, reminders, and fun interactive games.",
-    tech: ["Python", "Discord.py", "APIs", "Bot Development"],
+      "A personal Discord assistant that manages tasks, reminders, API lookups, and mini-games, built with a Python command framework and external data integrations for seamless automation.",
+    techPrimary: ["Python", "Discord.py"],
+    techExtraCount: 2, // APIs, infrastructure
     github: "https://github.com/jack-kong03/GIA.git",
-    demo: "https://jack-kong03.github.io",
+    status: "Complete",
   },
   {
-    title: "Smart Parking System with IoT",
+    title: "Smart Parking IoT",
+    tagline: "IoT · Smart cities",
     description:
-      "Smart parking system using Raspberry Pi and ultrasonic sensors to monitor parking occupancy in real time. Sends sensor data to Azure IoT Central, where a live dashboard visualises available and occupied spaces. Demonstrates end-to-end IoT integration from hardware to cloud dashboards for smart city use cases, improving parking utilisation and reducing search time for spaces.",
-    tech: ["Raspberry Pi", "Python", "Azure IoT Central", "Sensors", "Dashboard"],
+      "Raspberry Pi and ultrasonic sensors streaming live occupancy into Azure IoT Central, with a dashboard for available spaces and utilisation over time.",
+    techPrimary: ["Raspberry Pi", "Python", "Azure IoT"],
+    techExtraCount: 2, // Sensors, dashboard
     github: "https://github.com/jack-kong03",
-    demo: "https://jack-kong03.github.io",
+    status: "Prototype",
+  },
+  {
+    title: "StockMark",
+    tagline: "ML-powered stock analysis & tracking",
+    description:
+      "A platform for analysing and tracking stock performance using historical market data and machine learning models. Focused on trend detection, basic price prediction, and visual insights to support data-driven investment decisions.",
+    techPrimary: ["Python", "Pandas", "Scikit-learn"],
+    techExtraCount: 3, // Matplotlib, APIs, Data ingestion
+    github: "https://github.com/jack-kong03",
+    status: "Prototype",
   },
 ];
 
 export const Projects = () => {
   return (
-    <section
-      id="projects"
-      className="min-h-screen flex items-center justify-center py-20 bg-slate-950"
-    >
+    <section id="projects" className="min-h-screen flex items-center justify-center py-32 bg-white relative">
       <RevealOnScroll>
-        <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-            Featured Projects
-          </h2>
+        <div className="max-w-6xl mx-auto px-6 lg:px-12">
+          <div className="mb-16 space-y-4 text-center">
+            <h2 className="text-5xl md:text-6xl font-semibold text-gray-900 tracking-tight">
+              Selected Projects
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              A few systems and experiments i have built over the last couple of years.
+            </p>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projectsData.map((project, index) => (
-              <ProjectCard
-                key={index}
-                title={project.title}
-                description={project.description}
-                tech={project.tech}
-                github={project.github}
-                demo={project.demo}
-              />
+            {projectsData.map((project) => (
+              <ProjectCard key={project.title} {...project} />
             ))}
+          </div>
+
+          <div className="mt-16 text-center">
+            <a
+              href="https://github.com/jack-kong03"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-gray-900 hover:text-gray-600 font-medium transition-colors text-lg"
+            >
+              View more projects on my GitHub →
+            </a>
           </div>
         </div>
       </RevealOnScroll>

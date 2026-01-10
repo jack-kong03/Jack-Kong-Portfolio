@@ -4,49 +4,39 @@ export const Home = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950"
+      className="min-h-screen flex items-center justify-center relative bg-white pt-20"
     >
       <RevealOnScroll>
-        <div className="text-center z-10 px-4">
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent leading-tight">
-            Hi, I'm Jack Kong
-          </h1>
+        <div className="relative z-10 px-6 lg:px-12">
+          <div className="max-w-4xl mx-auto flex flex-col items-center text-center space-y-8">
+            {/* Large headline */}
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold text-gray-900 tracking-tight leading-[1.05]">
+              Jack{" "}
+              <span className="text-gray-600">Kong</span>.
+            </h1>
 
-          {/* Role + core stack */}
-          <p className="text-gray-300 text-xl mb-2">
-            Junior Developer · Python · Cloud · IoT
-          </p>
-
-          {/* Experience + degree grouped */}
-          <div className="text-gray-400 text-lg mb-8 space-y-2 max-w-xl mx-auto">
-            <p>
-              Built cloud-connected IoT sensor systems for real-time river water
-              quality monitoring @ AquaSensor Ltd
+            {/* Subheadline */}
+            <p className="text-xl md:text-2xl leading-relaxed text-gray-600 max-w-2xl">
+              Junior Developer - Python · Cloud · IoT
             </p>
-            <p>
-              1st Class Computing (Smart Technologies) graduate @ Sheffield
-              Hallam University
-            </p>
-          </div>
 
-          {/* CTAs */}
-          <div className="flex justify-center space-x-4 mt-2">
-            <a
-              href="#projects"
-              className="px-6 py-3 bg-blue-500 text-white rounded font-medium transition 
-                         relative overflow-hidden hover:-translate-y-0.5 
-                         hover:bg-blue-600 hover:shadow-[0_0_15px_rgba(59,130,246,0.35)]"
-            >
-              View Projects
-            </a>
-            <a
-              href="#contact"
-              className="border border-blue-500/60 text-blue-400 px-6 py-3 rounded font-medium 
-                         transition-all duration-200 hover:-translate-y-0.5 
-                         hover:bg-blue-500/10 hover:shadow-[0_0_15px_rgba(59,130,246,0.2)]"
-            >
-              Contact Me
-            </a>
+            {/* CTAs */}
+            <div className="flex flex-wrap justify-center gap-4 pt-4">
+              <a
+                href="#projects"
+                className="px-8 py-3 rounded-full bg-gray-900 text-white text-base font-medium
+                           hover:bg-gray-800 transition-all duration-300"
+              >
+                View My Projects
+              </a>
+              <a
+                href="#contact"
+                className="px-8 py-3 rounded-full border border-gray-300 text-gray-900 text-base font-medium
+                           hover:bg-gray-50 transition-all duration-300"
+              >
+                Contact Me
+              </a>
+            </div>
           </div>
         </div>
       </RevealOnScroll>
