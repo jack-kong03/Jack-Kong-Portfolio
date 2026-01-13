@@ -50,6 +50,8 @@ export const About = () => {
     "Node-RED",
     "Raspberry Pi",
     "Arduino",
+    "Git",
+    "HTML/CSS",
   ];
 
   const CloudDataAndML = [
@@ -70,23 +72,24 @@ export const About = () => {
     >
       <RevealOnScroll>
         <div className="max-w-6xl mx-auto px-6 lg:px-12">
-          <div className="grid md:grid-cols-[1fr,1.5fr] gap-16 lg:gap-24 items-start">
+          <div className="grid md:grid-cols-[1fr,1.5fr] gap-12 lg:gap-16 items-start">
             {/* Left: profile */}
             <div className="space-y-8">
-              <div className="relative inline-flex">
+              <div className="relative inline-flex group">
                 <img
                   src={profilePic}
                   alt="Jack Kong"
-                  className="w-64 h-64 md:w-72 md:h-72 rounded-3xl object-cover shadow-lg"
+                  className="w-64 h-64 md:w-72 md:h-72 rounded-3xl object-cover shadow-lg transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl"
                 />
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-400/20 to-blue-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
 
-              <div className="space-y-3 text-base text-gray-600">
-                <p className="text-xs uppercase tracking-wider text-gray-500 font-medium">
+              <div className="space-y-3 text-base md:text-lg text-gray-600">
+                <p className="text-xs uppercase tracking-wider text-gray-500 font-semibold">
                   Profile
                 </p>
-                <p className="text-gray-900 font-medium">Jack Kong</p>
-                <p className="text-gray-600">Junior Developer</p>
+                <p className="text-gray-900 font-bold text-lg md:text-xl">Jack Kong</p>
+                <p className="text-gray-600 font-medium">Junior Developer</p>
                 <p className="text-gray-600 flex items-center gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
@@ -97,10 +100,10 @@ export const About = () => {
               </div>
 
               <div className="space-y-3">
-                <p className="text-xs uppercase tracking-wider text-gray-500 font-medium">
+                <p className="text-xs uppercase tracking-wider text-gray-500 font-semibold">
                   Focus
                 </p>
-                <div className="flex flex-wrap gap-2 text-sm text-gray-700">
+                <div className="flex flex-wrap gap-2 text-sm md:text-base text-gray-700 font-medium">
                   <span className="px-4 py-1.5 rounded-full bg-gray-100 border border-gray-200">
                     Python
                   </span>
@@ -115,15 +118,15 @@ export const About = () => {
             </div>
 
             {/* Right: narrative */}
-            <div className="space-y-6 text-lg leading-relaxed text-gray-600">
-              <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 tracking-tight mb-4">
+            <div className="space-y-6 text-base md:text-lg leading-relaxed text-gray-600">
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 tracking-tight mb-6 text-shadow-subtle">
                Who am I?
               </h2>
 
-              <p>
-                I'm a Computing (Smart Technologies) graduate driven by curiosity, problem-solving, and building things to make my everyday life easier.
+              <p className="font-normal">
+                I'm a Computing (Smart Technologies) graduate with expertise in software development, programming, and system design. Skilled in version control (Git), testing methodologies, debugging, code review, and collaborative development. Driven by curiosity, problem-solving, and building scalable applications to make everyday life easier.
               </p>
-              <p>
+              <p className="font-normal">
                 Previously worked as a Student Project Intern at{" "}
                 <a
                   href="https://aquasensor.co.uk/"
@@ -133,20 +136,20 @@ export const About = () => {
                 >
                   AquaSensor
                 </a>
-                , helping build cloud-connected IoT sensor units and data pipelines for real-time river water quality monitoring, improving data reliability and reducing ingestion errors by ~10%.
+                , developing cloud-connected IoT sensor units and building robust data pipelines using Python, Azure cloud services, and database management for real-time river water quality monitoring. Applied software engineering best practices including version control (Git), code review, testing, debugging, and documentation. Improved data reliability and reduced ingestion errors by ~10% through code optimization, error handling, and systematic problem-solving.
               </p>
-              <p>
+              <p className="font-normal">
                 In parallel, helped run the Software &amp; Computer Engineering
-                Society as Development Team Officer, leading 15 events, weekly workshops,
-                and contributions to the university SHU App.
+                Society as Development Team Officer, leading 15 events, weekly programming workshops on software development fundamentals,
+                and contributing to full-stack web development for the university SHU App using modern web technologies including HTML, CSS, JavaScript, and React.
               </p>
-              <p>
-                Currently looking for junior developer roles across software, cloud, or IoT where i can learn from experienced engineers, contribute to real-world systems, and continue growing as a developer.
+              <p className="font-normal">
+                Currently seeking junior software developer roles in full-stack development, backend engineering, cloud computing, or IoT where I can collaborate with experienced engineers, contribute to production systems, and continue advancing my software engineering skills.
               </p>
 
               {/* Skills summary */}
               <div className="space-y-4 mt-8 pt-8 border-t border-gray-200">
-                <p className="text-xs uppercase tracking-wider text-gray-500 font-medium">
+                <p className="text-xs uppercase tracking-wider text-gray-500 font-semibold">
                   Skills
                 </p>
                 <div className="space-y-4">
@@ -154,10 +157,10 @@ export const About = () => {
                     <p className="text-xs text-gray-400 mb-2">Languages</p>
                     <div className="flex flex-wrap gap-2 text-sm text-gray-700">
                       {ProgrammingLanguages.map((lang) => (
-                        <span
-                          key={lang}
-                          className="px-4 py-1.5 rounded-full bg-gray-100 border border-gray-200 flex items-center gap-2"
-                        >
+                  <span
+                        key={lang}
+                        className="px-4 py-1.5 rounded-full bg-gray-100 border border-gray-200 flex items-center gap-2 transform transition-all duration-300 hover:scale-110 hover:bg-gray-200 hover:shadow-md cursor-default"
+                      >
                           <img
                             src={getIconUrl(lang)}
                             alt={`${lang} icon`}
@@ -177,7 +180,7 @@ export const About = () => {
                       {FrameworksAndTools.map((tool) => (
                         <span
                           key={tool}
-                          className="px-4 py-1.5 rounded-full bg-gray-100 border border-gray-200 flex items-center gap-2"
+                          className="px-4 py-1.5 rounded-full bg-gray-100 border border-gray-200 flex items-center gap-2 transform transition-all duration-300 hover:scale-110 hover:bg-gray-200 hover:shadow-md cursor-default"
                         >
                           <img
                             src={getIconUrl(tool)}
@@ -198,7 +201,7 @@ export const About = () => {
                       {CloudDataAndML.map((skill) => (
                         <span
                           key={skill}
-                          className="px-4 py-1.5 rounded-full bg-gray-100 border border-gray-200 flex items-center gap-2"
+                          className="px-4 py-1.5 rounded-full bg-gray-100 border border-gray-200 flex items-center gap-2 transform transition-all duration-300 hover:scale-110 hover:bg-gray-200 hover:shadow-md cursor-default"
                         >
                           <img
                             src={getIconUrl(skill)}
@@ -219,17 +222,17 @@ export const About = () => {
           </div>
 
           {/* Education & work */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-20">
-            <div className="rounded-3xl bg-gray-50 p-8 border border-gray-200">
-              <p className="text-xs uppercase tracking-wider text-gray-500 mb-4 font-medium flex items-center gap-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mt-16 lg:mt-20">
+            <div className="rounded-3xl bg-gray-50 p-6 md:p-8 border border-gray-200 transform transition-all duration-300 hover:shadow-lg hover:scale-[1.02]">
+              <p className="text-xs uppercase tracking-wider text-gray-500 mb-4 font-semibold flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
                 </svg>
                 Education
               </p>
-              <div className="space-y-4 text-base text-gray-600">
+              <div className="space-y-4 text-base md:text-lg text-gray-600">
                 <div>
-                  <p className="text-xl text-gray-900 font-semibold">
+                  <p className="text-2xl md:text-3xl text-gray-900 font-bold">
                     BSc Computing (Smart Technologies)
                   </p>
                   <p className="text-gray-600 flex items-center gap-2">
@@ -251,26 +254,35 @@ export const About = () => {
                     </svg>
                     2022 – 2025
                   </p>
-                  <ul className="space-y-2 text-sm">
+                  <ul className="space-y-2 text-sm md:text-base font-normal">
                     <li>
-                      Artificial Intelligence and Machine Learning
+                      Artificial Intelligence and Machine Learning (AI/ML)
                     </li>
                     <li>
-                      Cloud-based systems
+                      Cloud Computing & Cloud-based Systems (Azure, AWS)
                     </li>
                     <li>
-                      Integrated IoT Systems
+                      Integrated IoT Systems & Embedded Systems
                     </li>
                     <li>
-                      Data Management & Databases
+                      Data Management, Database Design & SQL
                     </li>
                     <li>
-                      System Architectures & Design Principles
+                      Software Architecture, System Design & Design Patterns
+                    </li>
+                    <li>
+                      Object-Oriented Programming (OOP) & Software Engineering
+                    </li>
+                    <li>
+                      Version Control (Git), Testing, Debugging & Code Review
+                    </li>
+                    <li>
+                      Web Development (HTML, CSS, JavaScript, React)
                     </li>
                   </ul>
                 </div>
                 <div className="mt-6 pt-6 border-t border-gray-200">
-                  <p className="text-xl text-gray-900 font-semibold">
+                  <p className="text-2xl md:text-3xl text-gray-900 font-bold">
                     CS50's Introduction to Programming with Python
                   </p>
                   <p className="text-gray-600 flex items-center gap-2">
@@ -290,16 +302,16 @@ export const About = () => {
               </div>
             </div>
 
-            <div className="rounded-3xl bg-gray-50 p-8 border border-gray-200">
-              <p className="text-xs uppercase tracking-wider text-gray-500 mb-4 font-medium flex items-center gap-2">
+            <div className="rounded-3xl bg-gray-50 p-6 md:p-8 border border-gray-200 transform transition-all duration-300 hover:shadow-lg hover:scale-[1.02]">
+              <p className="text-xs uppercase tracking-wider text-gray-500 mb-4 font-semibold flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.059 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
                 </svg>
                 Extracurricular
               </p>
-              <div className="space-y-4 text-base text-gray-600">
+              <div className="space-y-4 text-base md:text-lg text-gray-600">
                 <div>
-                  <p className="text-xl text-gray-900 font-semibold">
+                  <p className="text-2xl md:text-3xl text-gray-900 font-bold">
                     Course Representative
                   </p>
                   <p className="text-gray-600 flex items-center gap-2">
@@ -315,12 +327,12 @@ export const About = () => {
                     </svg>
                     2024 – 2025
                   </p>
-                  <p className="text-sm text-gray-600 mt-2">
-                    Served as course representative, acting as a bridge between students and faculty, advocating for student needs, and contributing to improvements in curriculum and learning experience.
+                  <p className="text-sm md:text-base text-gray-600 mt-2 font-normal">
+                    Served as course representative, acting as a bridge between students and faculty, advocating for student needs, and contributing to improvements in software engineering curriculum and learning experience.
                   </p>
                 </div>
                 <div className="mt-6 pt-6 border-t border-gray-200">
-                  <p className="text-xl text-gray-900 font-semibold">
+                  <p className="text-2xl md:text-3xl text-gray-900 font-bold">
                   Development Team Officer
                   </p>
                   <p className="text-gray-600 flex items-center gap-2">
@@ -336,12 +348,12 @@ export const About = () => {
                     </svg>
                     2023 – 2025
                   </p>
-                  <p className="text-sm text-gray-600 mt-2">
-                    Led events and workshops for society members, and contributed to the development of the SHU society website.
+                  <p className="text-sm md:text-base text-gray-600 mt-2 font-normal">
+                    Led programming events and software development workshops for society members, and contributed to full-stack web development of the SHU society website using modern web technologies and version control (Git).
                   </p>
                 </div>
                 <div className="mt-6 pt-6 border-t border-gray-200">
-                  <p className="text-xl text-gray-900 font-semibold">
+                  <p className="text-2xl md:text-3xl text-gray-900 font-bold">
                     Treasurer
                   </p>
                   <p className="text-gray-600 flex items-center gap-2">
@@ -357,23 +369,23 @@ export const About = () => {
                     </svg>
                     2023 – 2024
                   </p>
-                  <p className="text-sm text-gray-600 mt-2">
+                  <p className="text-sm md:text-base text-gray-600 mt-2 font-normal">
                     Managed budgets with 100% accuracy, introduced improved financial tracking, and supported a committee that grew student engagement by 30% through cross-cultural events.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-3xl bg-gray-50 p-8 border border-gray-200 md:col-span-2">
-              <p className="text-xs uppercase tracking-wider text-gray-500 mb-4 font-medium flex items-center gap-2">
+            <div className="rounded-3xl bg-gray-50 p-6 md:p-8 border border-gray-200 md:col-span-2 transform transition-all duration-300 hover:shadow-lg hover:scale-[1.02]">
+              <p className="text-xs uppercase tracking-wider text-gray-500 mb-4 font-semibold flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z" />
                 </svg>
                 Work Experience
               </p>
-              <div className="space-y-4 text-base text-gray-600">
+              <div className="space-y-4 text-base md:text-lg text-gray-600">
                 <div>
-                  <p className="text-xl text-gray-900 font-semibold">
+                  <p className="text-2xl md:text-3xl text-gray-900 font-bold">
                     Internship
                   </p>
                   <p className="text-gray-600 flex items-center gap-2">
@@ -389,21 +401,20 @@ export const About = () => {
                     </svg>
                     2023 – 2024
                   </p>
-                  <ul className="space-y-2 text-sm">
+                  <ul className="space-y-2 text-sm md:text-base font-normal">
                   <li>
-    Worked in a small agile team to prototype and deploy cloud-connected in-river
-    IoT sensor units, streaming secure, high-frequency water quality data to the
-    cloud from <strong>3 deployed sensors</strong>.
+    Worked in a small agile development team using Scrum methodology to prototype and deploy cloud-connected in-river
+    IoT sensor units, implementing secure API integrations and streaming high-frequency water quality data to Azure cloud from <strong>3 deployed sensors</strong>.
   </li>
   <li>
-    Helped build cloud data pipelines and a web dashboard for real-time river
-    water quality monitoring, <strong>improving data reliability and reducing
+    Developed cloud data pipelines using Python and Azure services, and built responsive web dashboards with real-time data visualization for river
+    water quality monitoring. Applied software engineering principles including error handling, testing, and code optimization, <strong>improving data reliability and reducing
     ingestion errors by ~10%</strong>.
   </li>
   <li>
-    Contributed to dashboards and data visualisations processing
-    <strong> hundreds of sensor readings per day</strong>, enabling partners to
-    spot pollution incidents and track long-term river health.
+    Contributed to full-stack web development, creating interactive dashboards and data visualisations processing
+    <strong> hundreds of sensor readings per day</strong>. Implemented database queries and data processing algorithms, enabling partners to
+    spot pollution incidents and track long-term river health through data-driven insights.
   </li>
                   </ul>
                 </div>
@@ -412,16 +423,17 @@ export const About = () => {
           </div>
 
           {/* CV */}
-          <div className="flex justify-center mt-16 items-center gap-2">
+          <div className="flex justify-center mt-12 md:mt-16 items-center gap-2">
             <a
               href={cvPdf}
               download="Jack_Kong_CV.pdf"
-              className="px-8 py-3 rounded-full border border-gray-300 text-gray-900 text-base font-medium hover:bg-gray-50 transition-all duration-300 inline-flex items-center gap-2 cursor-pointer"
+              className="group px-8 py-3 rounded-full border-2 border-gray-300 text-gray-900 text-base font-medium hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 inline-flex items-center gap-2 cursor-pointer transform hover:scale-105 active:scale-95 hover:shadow-lg relative overflow-hidden"
             >
-              Download my CV
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5">
+              <span className="relative z-10">Download my CV</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5 relative z-10 transform group-hover:translate-y-1 transition-transform duration-300">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
               </svg>
+              <span className="absolute inset-0 bg-gradient-to-r from-purple-100 to-blue-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
             </a>
           </div>
         </div>

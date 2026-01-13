@@ -1,5 +1,4 @@
 import { useState } from "react"; 
-import './App.css'
 import { LoadingScreen } from './components/LoadingScreen' 
 import "./index.css"
 import { Navbar } from "./components/Navbar";
@@ -10,6 +9,7 @@ import { Projects } from "./components/sections/Projects";
 import { Contact } from "./components/sections/Contact";
 import { Blog } from "./components/sections/Blog";
 import { Footer } from "./components/sections/Footer";
+import { BackToTop } from "./components/BackToTop";
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -29,6 +29,7 @@ function App() {
           <Blog />
           <Contact />
           <Footer />
+          <BackToTop />
         
       </div>
     </>

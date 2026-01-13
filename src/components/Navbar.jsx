@@ -2,10 +2,19 @@ import { useEffect, useState } from "react";
 
 export const Navbar = ({ menuOpen, setMenuOpen }) => {
   const [activeSection, setActiveSection] = useState("home");
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
   }, [menuOpen]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const sections = ["home", "about", "projects", "blog", "contact"];
@@ -68,29 +77,32 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-40">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="flex items-center justify-between h-14 backdrop-blur-xl bg-white/70 px-6">
+        <div className={`flex items-center justify-between h-16 backdrop-blur-md transition-all duration-300 px-6 rounded-2xl mx-2 mt-2 ${
+          scrolled 
+            ? "bg-white/90 shadow-lg border border-gray-200/50" 
+            : "bg-white/80 border border-gray-200/30"
+        }`}>
           {/* Brand */}
           <a
             href="#home"
-            className="text-base font-medium text-gray-900 tracking-tight hover:opacity-80 transition-opacity"
+            className="text-lg font-semibold text-gray-900 tracking-tight hover:opacity-80 transition-all duration-300 transform hover:scale-105 active:scale-95"
           >
             Jack Kong
           </a>
 
           {/* Desktop links */}
-          <div className="hidden md:flex items-center space-x-8 text-sm text-gray-600">
+          <div className="hidden md:flex items-center space-x-1">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className={`relative inline-block hover:text-gray-900 transition-colors ${
-                  activeSection === item.id ? "text-gray-900" : ""
+                className={`relative inline-block px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                  activeSection === item.id 
+                    ? "text-gray-900 bg-gray-100" 
+                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
                 }`}
               >
                 {item.label}
-                {activeSection === item.id && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gray-900 animate-underline" />
-                )}
               </a>
             ))}
           </div>
@@ -99,7 +111,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
           <button
             type="button"
             aria-label="Toggle navigation menu"
-            className="flex md:hidden items-center justify-center text-sm text-gray-600 hover:text-gray-900 transition-colors"
+            className="flex md:hidden items-center justify-center text-sm text-gray-600 hover:text-gray-900 transition-all duration-300 transform hover:scale-110 active:scale-95"
             onClick={() => setMenuOpen((prev) => !prev)}
           >
             Menu
