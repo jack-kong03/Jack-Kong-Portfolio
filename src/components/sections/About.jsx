@@ -118,34 +118,89 @@ export const About = () => {
             </div>
 
             {/* Right: narrative */}
-            <div className="space-y-6 text-base md:text-lg leading-relaxed text-gray-600">
+            <div className="space-y-8 text-base md:text-lg leading-relaxed text-gray-600">
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 tracking-tight mb-6 text-shadow-subtle">
                Who am I?
               </h2>
 
-              <p className="font-normal">
-                I'm a Computing (Smart Technologies) graduate with expertise in software development, programming, and system design. Skilled in version control (Git), testing methodologies, debugging, code review, and collaborative development. Driven by curiosity, problem-solving, and building scalable applications to make everyday life easier.
-              </p>
-              <p className="font-normal">
-                Previously worked as a Student Project Intern at{" "}
-                <a
-                  href="https://aquasensor.co.uk/"
-                  className="underline underline-offset-4 decoration-gray-300 hover:decoration-gray-600 transition-colors"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  AquaSensor
-                </a>
-                , developing cloud-connected IoT sensor units and building robust data pipelines using Python, Azure cloud services, and database management for real-time river water quality monitoring. Applied software engineering best practices including version control (Git), code review, testing, debugging, and documentation. Improved data reliability and reduced ingestion errors by ~10% through code optimization, error handling, and systematic problem-solving.
-              </p>
-              <p className="font-normal">
-                In parallel, helped run the Software &amp; Computer Engineering
-                Society as Development Team Officer, leading 15 events, weekly programming workshops on software development fundamentals,
-                and contributing to full-stack web development for the university SHU App using modern web technologies including HTML, CSS, JavaScript, and React.
-              </p>
-              <p className="font-normal">
-                Currently seeking junior software developer roles in full-stack development, backend engineering, cloud computing, or IoT where I can collaborate with experienced engineers, contribute to production systems, and continue advancing my software engineering skills.
-              </p>
+              {/* Introduction with icon */}
+              <div className="flex gap-4 items-start">
+                <div className="flex-shrink-0 mt-1">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-teal-100 to-teal-50 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-6 h-6 text-teal-600">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+                    </svg>
+                  </div>
+                </div>
+                <p className="font-normal flex-1">
+                  I'm a Computing (Smart Technologies) graduate with expertise in software development, programming, and system design. Skilled in version control (Git), testing methodologies, debugging, code review, and collaborative development. Driven by curiosity, problem-solving, and building scalable applications to make everyday life easier.
+                </p>
+              </div>
+
+              {/* Work experience with icon */}
+              <div className="flex gap-4 items-start">
+                <div className="flex-shrink-0 mt-1">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-100 to-cyan-50 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-6 h-6 text-cyan-600">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="flex-1 space-y-4">
+                  <p className="font-normal">
+                    Previously worked as a Student Project Intern at{" "}
+                    <a
+                      href="https://aquasensor.co.uk/"
+                      className="underline underline-offset-4 decoration-gray-300 hover:decoration-gray-600 transition-colors"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      AquaSensor
+                    </a>
+                    , developing cloud-connected IoT sensor units and building robust data pipelines using Python, Azure cloud services, and database management for real-time river water quality monitoring. Applied software engineering best practices including version control (Git), code review, testing, debugging, and documentation.
+                  </p>
+                  
+                  {/* Pull-quote for key achievement */}
+                  <div className="relative pl-6 border-l-4 border-cyan-400 bg-gradient-to-r from-cyan-50 to-transparent py-4 rounded-r-lg">
+                    <svg className="absolute top-4 left-2 w-6 h-6 text-cyan-400 opacity-50" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z"/>
+                    </svg>
+                    <p className="text-lg md:text-xl font-semibold text-gray-900 italic pl-6">
+                      Improved data reliability and reduced ingestion errors by <span className="text-cyan-600 not-italic">~10%</span> through code optimization, error handling, and systematic problem-solving.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Leadership with icon */}
+              <div className="flex gap-4 items-start">
+                <div className="flex-shrink-0 mt-1">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-teal-100 to-teal-50 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-6 h-6 text-teal-600">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.059 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                    </svg>
+                  </div>
+                </div>
+                <p className="font-normal flex-1">
+                  In parallel, helped run the Software &amp; Computer Engineering
+                  Society as Development Team Officer, leading <span className="font-semibold text-gray-900">15 events</span>, weekly programming workshops on software development fundamentals,
+                  and contributing to full-stack web development for the university SHU App using modern web technologies including HTML, CSS, JavaScript, and React.
+                </p>
+              </div>
+
+              {/* Future goals with icon */}
+              <div className="flex gap-4 items-start">
+                <div className="flex-shrink-0 mt-1">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-100 to-cyan-50 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-6 h-6 text-cyan-600">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m4.5 0a12.06 12.06 0 0 0 3.478-.397M15.75 15.75a4.5 4.5 0 0 1-3 0M4.867 19.125h.008v.008h-.008v-.008Zm-1.125 0h.008v.008H3.742v-.008Zm2.25 0h.008v.008h-.008v-.008Zm2.25 0h.008v.008h-.008v-.008Zm-4.5-1.5h.008v.008h-.008v-.008Zm1.125 0h.008v.008H3.742v-.008Zm2.25 0h.008v.008h-.008v-.008Zm2.25 0h.008v.008h-.008v-.008Zm-4.5-3h.008v.008h-.008v-.008Zm1.125 0h.008v.008H3.742v-.008Zm2.25 0h.008v.008h-.008v-.008Zm2.25 0h.008v.008h-.008v-.008Z" />
+                    </svg>
+                  </div>
+                </div>
+                <p className="font-normal flex-1">
+                  Currently seeking junior software developer roles in full-stack development, backend engineering, cloud computing, or IoT where I can collaborate with experienced engineers, contribute to production systems, and continue advancing my software engineering skills.
+                </p>
+              </div>
 
               {/* Skills summary */}
               <div className="space-y-4 mt-8 pt-8 border-t border-gray-200">
