@@ -38,7 +38,6 @@ export const About = () => {
   const ProgrammingLanguages = [
     "Python",
     "Java",
-    "C#",
     "JavaScript",
     "SQL",
   ];
